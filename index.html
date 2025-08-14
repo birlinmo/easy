@@ -636,8 +636,8 @@
   const furnitureItems = [
     { id: 1, name: 'Sofa', image: 'soofa.svg' },
     { id: 2, name: 'Tisch', image: 'tisch.svg' },
-    { id: 3, name: 'Bett', image: 'Bett.svg' },
-    { id: 4, name: 'Schrank', image: 'Schrank.svg' },
+    { id: 3, name: 'Bett', image: 'bett.svg' },
+    { id: 4, name: 'Schrank', image: 'schrank.svg' },
     { id: 5, name: 'Stuhl', image: 'stuhl.svg' },
     { id: 6, name: 'Schreibtisch', image: 'Schreibtisch.svg' },
     { id: 7, name: 'regal', image: 'regal.svg' },
@@ -929,23 +929,107 @@ document.getElementById('submitFormBtn').addEventListener('click', function() {
         message: `New booking request from ${formData.name}`,
         title: "New Booking Request"
       })
-      .then(() => {
-        alert("Booking submitted successfully!");
-        document.getElementById('furnitureForm').reset();
-        goToPage(1);
-      })
-       .catch(error => {
+       .then(() => {
+    showAlert(
+      '✓ Erfolgreich gesendet', 
+      'Ihre Anfrage wurde erfolgreich versendet. Wir werden uns schnellstmöglich bei Ihnen melden.',
+      'success'
+    );
+    document.getElementById('furnitureForm').reset();
+    goToPage(1);
+  })
+  .catch(error => {
+    showAlert(
+      '✗ Fehler beim Senden', 
+      'Beim Senden Ihrer Anfrage ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.',
+      'error'
+    );
     console.error("Failed to send:", error);
-    alert("Failed to submit booking. Error: " + JSON.stringify(error));
   });
-    });
+});
+
+// دالة لعرض الرسائل المخصصة
+function showAlert(title, message, type) {
+  // إزالة أي رسائل سابقة
+  const oldAlert = document.querySelector('.custom-alert');
+  if (oldAlert) oldAlert.remove();
   
+  // إنشاء عنصر الرسالة الجديدة
+  const alertDiv = document.createElement('div');
+  alertDiv.className = `custom-alert alert-${type}`;
+  
+  // أيقونة حسب النوع
+  const icon = type === 'success' ? '✓' : '✗';
+  
+  // محتوى الرسالة
+  alertDiv.innerHTML = `
+    <span class="alert-icon">${icon}</span>
+    <div>
+      <strong>${title}</strong><br>
+      <span style="font-size:14px">${message}</span>
+    </div>
+  `;
+  
+  document.body.appendChild(alertDiv);
+  
+  // إزالة الرسالة تلقائياً بعد 5 ثواني
+  setTimeout(() => {
+    alertDiv.style.animation = 'fadeOut 20s forwards';
+    setTimeout(() => alertDiv.remove(), 500);
+  }, 5000);
+}
   });
+   
+  
+ 
   
   
 </script>
 
-
+<style>
+  /* أنماط رسائل التنبيه */
+  .custom-alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    max-width: 90%;
+    animation: slideIn 0.5s, fadeOut 0.5s 4.5s forwards;
+  }
+  
+  .alert-success {
+    background: #4CAF50;
+    color: white;
+    border-left: 5px solid #2E7D32;
+  }
+  
+  .alert-error {
+    background: #f44336;
+    color: white;
+    border-left: 5px solid #c62828;
+  }
+  
+  .alert-icon {
+    margin-right: 15px;
+    font-size: 24px;
+  }
+  
+  @keyframes slideIn {
+    from { top: -100px; opacity: 0; }
+    to { top: 20px; opacity: 1; }
+  }
+  
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; visibility: hidden; }
+  }
+</style>
 
 <!--نتهاء الكود -->
     <section class="contactContainer" id="3">
