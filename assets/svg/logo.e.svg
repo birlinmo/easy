@@ -1,0 +1,13 @@
+<svg width="108" height="108" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text { 
+      fill: white; 
+      font-weight: bold; 
+      font-family: Arial, sans-serif;
+      filter: drop-shadow(0px 0px 1.8px rgba(0, 0, 0, 0.5));
+    }
+  </style>
+  <rect width="100%" height="100%" fill="none"/>
+  <text x="50%" y="45%" class="text" font-size="28.8" text-anchor="middle" dominant-baseline="middle">Easy</text>
+  <text x="50%" y="75%" class="text" font-size="28.8" text-anchor="middle" dominant-baseline="middle">Montage</text>
+</svg>

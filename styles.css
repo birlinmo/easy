@@ -1,0 +1,733 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", serif;
+}
+/* أضف هذا في بداية CSS */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* تأكد من أن جميع العناصر تلتزم بالعرض */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+body {
+  background-color: #222831;
+  margin: 0;
+  font-family: Arial;
+  width: 100%; /* تأكد من أن الجسم يأخذ العرض الكامل */
+  min-width: 320px; /* حد أدنى لعرض الشاشة (مهم للهواتف الصغيرة) */
+  padding: 0 20px;
+  box-sizing: border-box; /* يجعل الـ padding جزءًا من العرض الكلي */
+  overflow-x: hidden; /* يمنع التمرير الأفقي */
+}
+
+/* للشاشات الكبيرة (أكثر من 1200px) */
+@media (min-width: 1200px) {
+  body {
+    max-width: 1200px; /* يحدد عرضًا أقصى للشاشات الكبيرة فقط */
+    margin: 0 auto; /* توسيط المحتوى */
+  }
+}
+
+/* للهواتف (شاشات أقل من 768px) */
+@media (max-width: 768px) {
+  body {
+    padding: 0 15px; /* تقليل المساحة الجانبية على الهواتف */
+  }
+}
+
+
+
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem auto;
+  max-width: 1200px;
+  
+  height: 40px; /* يمكنك تغيير هذه القيمة حسب احتياجك */
+    min-height: 40px; /* لمنع التقلص أكثر من اللازم */
+    padding: 0 15px; /* إزالة padding العلوي والسفلي */
+    box-sizing: border-box;
+
+}
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 5px rgba(241, 238, 238, 0.1);
+}
+
+/* تنسيق عناصر الـ Header (للحاسوب) */
+.logo, .desktop-nav {
+    display: block;
+}
+
+.desktop-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.desktop-nav a {
+    text-decoration: none;
+   color: #eeeeee;
+    font-weight: 500;
+}
+
+/* زر القائمة (مخفي على الحاسوب) */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* القائمة المنسدلة (مخفية افتراضيًا) */
+.mobile-dropdown {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.mobile-dropdown a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+.mobile-dropdown a:hover {
+    background: #f1f1f1;
+}
+
+/* تجاوب الهاتف (عرض أقل من 768px) */
+@media (max-width: 768px) {
+    /* إخفاء جميع العناصر ما عدا زر القائمة */
+    .logo, .desktop-nav {
+        display: none !important;
+    }
+
+    /* إظهار زر القائمة في أقصى اليمين */
+    .mobile-menu-btn {
+        display: block;
+        margin-left: auto; /* يدفع الزر لليمين */
+         color: #eeeeee;
+        
+    }
+
+    /* إظهار القائمة عند النقر */
+    .mobile-dropdown.show {
+        display: block;
+    }
+}
+.navigation ul {
+  display: flex;
+  list-style-type: none;
+  gap: 2rem;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #eeeeee;
+}
+
+.navigation a:hover {
+  color: #00adb5;
+}
+
+hr {
+  opacity: 10%;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5rem auto;
+  max-width: 1200px;
+}
+.arrow {
+  position: absolute;
+  transform: translateX(-5.5rem) translateY(1.5rem);
+}
+
+.heroSub {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.name {
+  font-size: 3rem;
+  color: #eeeeee;
+}
+
+.title {
+  font-size: 2rem;
+  color: #00adb5;
+}
+.heroBtns {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.hireMe {
+  background-color: #00adb5;
+  color: #eeeeee;
+  border-radius: 24px;
+  text-decoration: none;
+  padding: 0.35rem 0.6rem; /* تصغير الحشو الجانبي فقط */
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+  font-size: 1.2rem; /* تصغير حجم الخط قليلاً */
+  display: inline-flex; /* لتحسين المحاذاة */
+  justify-content: center;
+  align-items: center;
+  width: 35%; /* تحديد العرض بنسبة 20% */
+  min-width: fit-content; /* منع انضغاط النص */
+  box-sizing: border-box; /* لحساب الحشو في العرض */
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: Arial;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* تعديلات للهواتف (شاشات بعرض أقل من 768px) */
+@media (max-width: 768px) {
+  .textContainer {
+    max-width: 100%; /* ليملأ العرض بالكامل */
+    padding: 0 5px; /* مسافة صغيرة من الجوانب (يمكن تعديل القيمة حسب الرغبة) */
+    box-sizing: border-box; /* لضمان أن الـ padding لا يزيد العرض */
+  }
+}
+.textTitle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 2rem;
+}
+.aboutName {
+  color: #eeeeee;
+   margin-bottom: 60px; 
+}
+.aboutTitle {
+  color: #00adb5;
+   margin-bottom: 60px; 
+}
+
+
+/* تحسينات للحواسيب */
+@media (min-width: 769px) {
+  .ÜberunsParagraf {
+    max-width: 100%; /* يملأ العرض بالكامل */
+    font-size: 18px;
+    line-height: 1.7;
+    padding: 0 10px; /* هوامش أكبر قليلًا للحواسيب */
+    margin: 0;
+    color: rgba(240, 232, 232, 0.75);
+  font-family: Arial, sans-serif;
+  text-align: left;
+  }
+}
+.ÜberunsParagraf {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 8px; /* هوامش جانبية صغيرة جدًا (8 بكسل) */
+  color: rgba(240, 232, 232, 0.75);
+  font-family: Arial, sans-serif;
+  text-align: left;
+  margin: 0 auto;
+  word-break: break-word;
+  hyphens: auto;
+}
+/* تحسينات للهواتف */
+@media (max-width: 768px) {
+  .ÜberunsParagraf {
+    font-size: 30px;
+    line-height: 1.8;
+    padding: 0 8px; /* هوامش صغيرة جدًا للهواتف */
+    margin: 0;
+    color: rgba(240, 232, 232, 0.75);
+  font-family: Arial, sans-serif;
+  text-align: left;
+  }
+}
+
+/* تحسينات للهواتف الصغيرة جدًا */
+@media (max-width: 480px) {
+  .ÜberunsParagraf {
+    font-size: 18px;
+    padding: 0 8px; /* أقل هوامش ممكنة */
+    margin: 0;
+    color: rgba(240, 232, 232, 0.75);
+  font-family: Arial, sans-serif;
+  text-align: left;
+  }
+}
+
+
+.works {
+  padding: 40px 0;
+  background-color: #222831;
+}
+
+.worksContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.projectTitle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 110px;
+}
+
+.aboutNam {
+  color: #eeeeee;
+  margin-bottom: 60px;
+  font-size: 3rem; /* حجم ثابت للحاسوب */
+}
+
+.aboutTitl {
+  color: #0c9797;
+  margin-bottom: 60px;
+  font-size: 3rem; /* حجم ثابت للحاسوب */
+}
+
+/* تحسينات للهاتف */
+@media (max-width: 768px) {
+  .aboutNam,
+  .aboutTitl {
+    font-size: 2rem; /* تصغير حجم الخط للهاتف */
+    margin-bottom: 40px; /* تقليل المسافة السفلية */
+  }
+  
+  .projectTitle {
+    margin-top: 80px; /* تقليل المسافة العلوية */
+  }
+}
+
+/* للهواتف الصغيرة جدًا */
+@media (max-width: 480px) {
+  .aboutNam,
+  .aboutTitl {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+  
+  .projectTitle {
+    margin-top: 60px;
+    gap: 3px; /* تقليل المسافة بين العناصر */
+  }
+}
+
+.gallery {
+  display: flex;
+  position: relative;
+  height: 400px;
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.slide img {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(37, 34, 34, 0.1);
+}
+
+.caption {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #da1616;
+  text-align: center;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(33, 37, 37, 0.982);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 253, 253);
+  font-size: 1.5rem;
+  z-index: 10;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.arrow:hover {
+  background-color: #292e33;
+  color: rgb(247, 242, 242);
+}
+
+.arrow.prev {
+  right: 20px; /* كانت left فأصبحت right */
+  left: auto; /* إلغاء القيمة السابقة */
+}
+
+.arrow.next {
+  left: 20px; /* كانت right فأصبحت left */
+  right: auto; /* إلغاء القيمة السابقة */
+}
+
+.arrow i {
+  font-size: 1.2rem;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px; /* المسافة الأصلية للحواسيب */
+}
+
+.dot {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: #f9f6f6;
+  text-indent: -9999px;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: #0909f6;
+}
+
+/* تعديلات للهواتف */
+@media (max-width: 768px) {
+  .dots {
+    margin-top: 1px; /* تقليل المسافة العلوية للنقاط */
+    padding-bottom: 10px; /* إضافة مسافة بسيطة من الأسفل إذا لزم الأمر */
+  }
+  
+  .dot {
+    width: 10px; /* تصغير حجم النقاط قليلاً */
+    height: 10px;
+    margin: 0 4px; /* تقليل المسافة بين النقاط */
+  }
+}
+
+/* للهواتف الصغيرة جدًا */
+@media (max-width: 480px) {
+  .dots {
+    margin-top: 8px;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+    margin: 0 3px;
+  }
+}
+
+
+/* Hide scrollbar for slides */
+.slides::-webkit-scrollbar {
+  display: none;
+}
+
+.slides {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .aboutName, .aboutTitle {
+    font-size: 3rem;
+  }
+  
+  .gallery {
+    height: 350px;
+  }
+  
+  .arrow {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutName, .aboutTitle {
+    font-size: 2.5rem;
+  }
+  
+  .gallery {
+    height: 300px;
+  }
+  
+
+ }
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+.contactTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5rem;
+  gap: 20rem;
+}
+.contact h3,
+.contact a {
+  color: #eeeeee;
+  text-decoration: none;
+}
+.emailAndPhone {
+
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+
+.Kontaktieren {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+ 
+ .Kontaktieren a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background-color: rgba(57, 62, 70, 0.5);
+  backdrop-filter: blur(4px);
+  padding: 1rem;
+}
+ .Kontaktieren img {
+  width: 24px;
+  height: 24px;
+   
+}
+
+footer {
+  color: #eeeeee;
+  padding: 2rem;
+  text-align: center;
+}
+
+@media (max-width: 1000px)  {
+  header {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .heroImg {
+    width: 400px;
+  }
+  .name,
+  .title {
+    font-size: 2rem;
+  }
+  .arrow {
+    display: none;
+  }
+  .Überuns {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 2rem;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0rem 5rem;
+  gap: 1rem;
+}
+
+/* تعديلات للهواتف (شاشات بعرض أقل من 768px) */
+@media (max-width: 768px) {
+  .Überuns {
+    gap: 1rem; /* تقليل المسافة بين العناصر على الهواتف */
+    
+  }
+
+  .textContainer {
+    margin: 0rem 1.5rem; /* تقليل الهامش الجانبي ليكون أنسب للشاشات الصغيرة */
+    padding: 0 10px; /* إضافة padding داخلي لمنع التصاق النص بالحافة */
+    width: 100%; /* التأكد من ملء العرض المتاح */
+    box-sizing: border-box; /* الحفاظ على الأبعاد مع الـ padding */
+  }
+}
+  .aboutName,
+  .aboutTitle {
+    font-size: 2rem;
+  }
+  .light {
+    width: 60px;
+  }
+  .ÜberunsImg {
+    width: 400px;
+  }
+  .works {
+    padding: 0;
+  }
+  .worksContainer {
+    padding: 5rem 0rem;
+    gap: 3rem;
+  }
+  .projectTitle {
+    margin-left: 1rem;
+  }
+  .works ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .contactContainer {
+    margin: 10rem 5rem;
+    gap: 2rem;
+  }
+  .contact {
+    flex-direction: column;
+    gap: 1rem;
+    margin-right: 0;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .heroImg, .ÜberunsImg {
+    width: 100% !important;
+    max-width: 100%;
+    height: auto;
+  }
+}
+@media (max-width: 768px) {
+  .contact {
+    margin-right: 0 !important;
+    gap: 2rem !important; /* تقليل المسافة بين العناصر */
+  }
+  
+  .textContainer {
+    margin: 0 1rem !important; /* تقليل الهوامش الجانبية */
+  }
+}
+.gallery {
+  overflow-x: hidden; /* إضافة هذه السمة */
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    height: auto; /* ارتفاع متكيف مع المحتوى */
+    padding-bottom: 20px;
+  }
+  
+  .slide img {
+    max-height: 200px; /* تقليل حجم الصور */
+  }
+}
+.radio-option input:checked {
+  background-color: #00adb5;
+  border-color: #00adb5;
+}
+
+.radio-option input:checked::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+}
+
+.radio-option:hover input {
+  box-shadow: 0 0 0 3px rgba(0, 173, 181, 0.2);
+}
+@keyframes slideIn {
+    from { top: -50px; opacity: 0; }
+    to { top: 20px; opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}

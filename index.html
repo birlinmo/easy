@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>EasyMontage</title>
+   
+
+  
+<head>
+  <!-- أضف هذا قبل أي سكريبت آخر -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    // تهيئة EmailJS مع Public Key الخاص بك
+    emailjs.init("HJZjYi0OkAxEcI2Ox");
+  </script>
+</head>
+
+
+  </head>
+  <body>
+    <div class="container"></div>
+    <header>
+      <img src="assets/svg/logo.e.svg" alt=" logo" />
+       <nav class="desktop-nav">
+      
+        <a href="#1">Über uns</a>
+        <a href="#2">unser Service</a>
+        <a href="#3">Contact</a>
+        
+    </nav>
+       <!-- نسخة الهاتف -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+
+    <div class="mobile-dropdown" id="mobileDropdown">
+       
+        <a href="#1">Über uns</a>
+        <a href="#2">unser Service</a>
+        <a href="#3">Contact</a>
+    </div>
+    </header>
+    <hr />
+    <section class="hero">
+      
+      <div class="heroSub">
+        <h1 class="name">Easymontage</h1>
+        <h1 class="title">Brauchen Sie Hilfe beim Auf- oder Abbau Ihrer Möbel</h1>
+        <div class="heroBtns">
+  <a class="hireMe" href="#termin-buchung">Einfach buchen</a>
+</div>
+<script>
+  document.querySelector('.hireMe').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('termin-buchung').scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+</script>
+<script>
+  // عند تحميل الصفحة
+  window.onload = function() {
+    // الانتقال إلى الأعلى
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  // عند تحديث الصفحة
+  window.onbeforeunload = function() {
+    window.scrollTo(0, 0);
+  };
+</script>
+      </div>
+      <img src="assets/svg/logomit.svg" alt="hero image" class="heroImg" />
+    </section>
+
+
+      <div class="textContainer">
+        
+        
+      </div>
+    </section>
+
+ <section class="Über uns" id="1">
+      
+     
+      <div class="textContainer">
+        <div class="textTitle">
+          <h1 class="aboutName">Über</h1>
+          <h1 class="aboutTitle">uns</h1>
+        
+        </div>
+        <p class="ÜberunsParagraf">
+            EasyMontage ist ein führendes Unternehmen für professionelle Demontage- und Montagedienstleistungen von Möbeln.
+             Wir bieten maßgeschneiderte Lösungen mit höchster  
+             Effizienz und Zuverlässigkeit  für Privat- und Geschäftskunden gleichermaßen. Unser
+              Team behandelt Ihre Möbel mit größter Sorgfalt, um ihre Sicherheit während des Ab- oder Aufbaus jederzeit zu gewährleisten.
+             Wir stehen für einen schnellen, sicheren und kundenorientierten Service, der Ihre Erwartungen erfüllt  und übertrifft.
+        </p>
+      </div>
+    </section>
+
+    <section class="works" id="2">
+  <div class="worksContainer">
+    <div class="projectTitle">
+      <h1 class="aboutNam">Unsere</h1>
+      <h1 class="aboutTitl">Services</h1>
+    </div>
+    
+  <!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض الشرائح المتكامل</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* CSS مدمج */
+        .main-container {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.custom-gallery-section {
+    margin: 0;
+    padding: 20px 0;
+    background: #222831;
+}
+
+.gallery-container.modified {
+    position: relative;
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.gallery-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.slides-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.slide-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: scale(0.95);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.slide-item.active-slide {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 10;
+}
+
+.slide-image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-image {
+    max-width: 100%;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+}
+
+.slide-image:hover {
+    transform: scale(1.03);
+}
+
+.slide-caption {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #eeeeee;
+    text-align: center;
+    padding: 10px 20px;
+    background: rgba(57, 62, 70, 0.7);
+    border-radius: 30px;
+    width: fit-content;
+    max-width: 80%;
+}
+
+.nav-arrow {
+    background: rgba(34, 40, 49, 0.8);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 15px;
+    color: #eeeeee;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-arrow:hover {
+    background: #2c3838;
+    color: white;
+    transform: scale(1.1);
+}
+
+.slide-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 10px 0;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #b0b8c1;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+     margin-top: 20px;
+}
+
+.indicator.active {
+    background: #f0f5f5;
+    transform: scale(1.3);
+}
+
+/* تحسينات للهواتف */
+@media (max-width: 768px) {
+    .slides-container {
+        min-height: 400px;
+    }
+    
+    .slide-image {
+        max-height: 350px;
+    }
+    
+    .slide-caption {
+        font-size: 18px;
+        padding: 12px 20px;
+         min-width: 200px; /* تحديد حد أدنى للعرض */
+  white-space: nowrap
+    }
+    
+    .nav-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slides-container {
+        min-height: 300px;
+    }
+    
+    .slide-image {
+        max-height: 250px;
+    }
+    
+    .slide-caption {
+        font-size: 16px;
+        max-width: 90%;
+    }
+    
+    .gallery-container.modified {
+        width: 100%;
+        padding: 0;
+    }
+}
+    </style>
+</head>
+ <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            const dropdown = document.getElementById('mobileDropdown');
+
+            menuBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                dropdown.classList.toggle('show');
+            });
+
+            document.addEventListener('click', function() {
+                dropdown.classList.remove('show');
+            });
+
+            dropdown.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        });
+    </script>
+<body>
+    <!-- الكود الرئيسي -->
+    <div class="main-container">
+        <!-- قسم معرض الشرائح -->
+        <section class="custom-gallery-section" aria-label="معرض خدمات الشركة">
+            <h1 class="gallery-title"></h1>
+            
+            <div class="gallery-container modified">
+                <div class="gallery-wrapper">
+                    <button class="nav-arrow prev-btn" aria-label="الشريحة السابقة">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="slides-container">
+                        <div class="slide-item active-slide" aria-hidden="false">
+                            <img src="assets/svg/mo.svg" alt="خدمة تركيب الأثاث" class="slide-image">
+                            <div class="slide-caption">Möbelmontage</div>
+                        </div>
+                        
+                        <div class="slide-item" aria-hidden="true">
+                            <img src="assets/svg/Dekorationsmontage.svg" alt="خدمة تركيبن" class="slide-image">
+                            <div class="slide-caption">Dekorationsmontage </div>
+                        </div>
+                        
+                        <div class="slide-item" aria-hidden="true">
+                            <img src="assets/svg/Küchenmontag.svg" alt="خدمة تركيب المطابخ" class="slide-image">
+                            <div class="slide-caption">Küchenmontage</div>
+                        </div>
+                        
+                        <div class="slide-item" aria-hidden="true">
+                            <img src="assets/svg/Möbelentsorgung.svg" alt="خدمة تركيب الأثاث" class="slide-image">
+                            <div class="slide-caption">Möbelentsorgung</div>
+                        </div>
+                    </div>
+                    
+                    <button class="nav-arrow next-btn" aria-label="الشريحة التالية">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <!-- مؤشرات الشرائح -->
+                <div class="slide-indicators">
+                    <div class="indicator active" data-index="0" aria-label="انتقل إلى الشريحة 1"></div>
+                    <div class="indicator" data-index="1" aria-label="انتقل إلى الشريحة 2"></div>
+                    <div class="indicator" data-index="2" aria-label="انتقل إلى الشريحة 3"></div>
+                    <div class="indicator" data-index="3" aria-label="انتقل إلى الشريحة 4"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JavaScript مدمج -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // عناصر DOM
+            const slides = document.querySelectorAll('.slide-item');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const indicators = document.querySelectorAll('.indicator');
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+            
+    
+            
+            // عرض شريحة محددة
+            function showSlide(index) {
+                // إخفاء جميع الشرائح
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active-slide');
+                    slide.setAttribute('aria-hidden', 'true');
+                    indicators[i].classList.remove('active');
+                });
+                
+                // إظهار الشريحة المطلوبة
+                slides[index].classList.add('active-slide');
+                slides[index].setAttribute('aria-hidden', 'false');
+                indicators[index].classList.add('active');
+                currentIndex = index;
+                
+                // إعادة تشغيل المؤقت
+                resetInterval();
+            }
+            
+            // الشريحة التالية
+            function nextSlide() {
+                const newIndex = (currentIndex + 1) % totalSlides;
+                showSlide(newIndex);
+            }
+            
+            // الشريحة السابقة
+            function prevSlide() {
+                const newIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                showSlide(newIndex);
+            }
+            
+            // بدء التمرير التلقائي
+            function startInterval() {
+                slideInterval = setInterval(nextSlide, intervalTime);
+            }
+            
+            // إعادة تعيين المؤقت
+            function resetInterval() {
+                clearInterval(slideInterval);
+                startInterval();
+            }
+            
+            // الأحداث
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+            
+            // مؤشرات الشرائح
+            indicators.forEach(indicator => {
+                indicator.addEventListener('click', function() {
+                    const slideIndex = parseInt(this.getAttribute('data-index'));
+                    showSlide(slideIndex);
+                });
+            });
+            
+            // التنقل بالسهام
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight') nextSlide();
+                if (e.key === 'ArrowLeft') prevSlide();
+            });
+            
+            // بدء التشغيل
+            showSlide(currentIndex);
+            startInterval();
+            
+            // إيقاف التمرير عند التركيز على العناصر
+            const interactiveElements = [prevBtn, nextBtn, ...indicators];
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => clearInterval(slideInterval));
+                el.addEventListener('mouseleave', startInterval);
+            });
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="de">
+  
+<head>
+    
+<!-- ابدأ النسخ من هنا -->
+<section id="termin-buchung" class="form-container" style="max-width: 800px; margin: 40px auto; padding: 20px; background: transparent;">
+  <form id="furnitureForm" style="color: white;" onsubmit="return validateForm()">
+    <!-- الصفحة 1: حجز الموعد -->
+    <div class="form-page active" id="page1" style="display: block;">
+      <h2 style="color: white; text-align: center; margin-bottom: 30px;">Termin buchen</h2>
+      
+      <!-- حقل الاسم -->
+      <div class="form-group" style="margin-bottom: 20px;">
+        <label style="display: block; margin-bottom: 8px; font-weight: bold; color: white;">
+          Name <span class="required-star">*</span>
+        </label>
+        <input type="text" id="name" required 
+               class="form-input"
+               style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box; background-color: rgba(255,255,255,0.2); color: white;">
+      </div>
+      
+      <!-- حقل الهاتف -->
+      <div class="form-group" style="margin-bottom: 20px;">
+        <label style="display: block; margin-bottom: 8px; font-weight: bold; color: white;">
+          Telefonnummer <span class="required-star">*</span>
+        </label>
+        <input type="tel" id="phone" required 
+               class="form-input"
+               style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box; background-color: rgba(255,255,255,0.2); color: white;">
+      </div>
+      <div class="form-group" style="margin-bottom: 20px;">
+  <label style="display: block; margin-bottom: 8px; font-weight: bold; color: white;">
+    Kundenart <span class="required-star">*</span>
+  </label>
+
+  
+  <div class="radio-group" style="display: flex; gap: 20px; margin-top: 10px;">
+    <label class="radio-option" style="display: flex; align-items: center; cursor: pointer;">
+      <input type="radio" name="customerType" value="private" required 
+             style="appearance: none; width: 18px; height: 18px; border: 2px solid #00adb5; border-radius: 50%; margin-right: 8px; position: relative;
+                    transition: all 0.2s ease;">
+      <span style="color: white;">Privatkunde</span>
+    </label>
+    
+    <label class="radio-option" style="display: flex; align-items: center; cursor: pointer;">
+      <input type="radio" name="customerType" value="business" required
+             style="appearance: none; width: 18px; height: 18px; border: 2px solid #00adb5; border-radius: 50%; margin-right: 8px; position: relative;
+                    transition: all 0.2s ease;">
+      <span style="color: white;">Firmenkunde</span>
+    </label>
+  </div>
+</div>
+      <!-- حقل البريد الإلكتروني (اختياري) -->
+      <div class="form-group" style="margin-bottom: 20px;">
+        <label style="display: block; margin-bottom: 8px; font-weight: bold; color: white;">E-Mail</label>
+        <input type="email" id="email" 
+               class="form-input"
+               style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box; background-color: rgba(255,255,255,0.2); color: white;">
+      </div>
+      
+      <!-- حقل العنوان -->
+      <div class="form-group" style="margin-bottom: 20px;">
+        <label style="display: block; margin-bottom: 8px; font-weight: bold; color: white;">
+          Adresse <span class="required-star">*</span>
+        </label>
+        <textarea id="address" required 
+                  class="form-input"
+                  style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box; background-color: rgba(255,255,255,0.2); color: white; height: 100px; resize: vertical;"></textarea>
+      </div>
+      
+      <button type="submit" class="next-btn1" style="padding: 12px 25px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: all 0.3s ease; background: #2c3e50; color: white;">Weiter</button>
+    </div>
+  </form>
+</section>
+
+<style>
+  .required-star {
+    color: #e74c3c;
+    font-size: 1.2em;
+  }
+  
+  .invalid-input {
+    border: 1px solid #e74c3c !important;
+    animation: pulse 0.5s;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+  }
+</style>
+
+<script>
+  function validateForm() {
+    let isValid = true;
+    const requiredInputs = document.querySelectorAll('.form-input[required]');
+    
+    // إعادة تعيين جميع الحقول
+    requiredInputs.forEach(input => {
+      input.classList.remove('invalid-input');
+    });
+    
+    // التحقق من الحقول الإجبارية
+    requiredInputs.forEach(input => {
+      if (!input.value.trim()) {
+        input.classList.add('invalid-input');
+        isValid = false;
+      }
+    });
+    
+    return isValid;
+  }
+</script>
+    <!-- الصفحة 2: اختيار الأثاث -->
+    <div class="form-page" id="page2" style="display: none;">
+      <h2 style="color: white; text-align: center; margin-bottom: 30px;">Möbelauswahl</h2>
+      
+      <div class="furniture-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; margin-bottom: 30px;">
+        <!-- سيتم إضافة الأثاث هنا عبر JavaScript -->
+      </div>
+      
+      <!-- قسم العدد الإجمالي المضاف -->
+      <div class="total-section" style="padding: 15px; background: rgba(255,255,255,0.1); border-radius: 8px; margin-top: 20px; text-align: center;">
+        <h3 style="color: white; margin: 0;">Gesamt: <span id="total-items">0</span> Möbelstücke</h3>
+      </div>
+      
+      <div class="form-navigation" style="display: flex; justify-content: space-between; margin-top: 30px;">
+        <button type="button" class="prev-btn" style="padding: 12px 25px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: all 0.3s ease; background: rgba(255,255,255,0.2); color: white;">Zurück</button>
+        <button type="button" class="next-btn2" style="padding: 12px 25px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: all 0.3s ease; background: #2c3e50; color: white;">Weiter</button>
+      </div>
+    </div>
+
+    <!-- الصفحة 3: تأكيد الموعد -->
+    <div class="form-page" id="page3" style="display: none;">
+       
+      <h2 style="color: white; text-align: center; margin-bottom: 30px;">Terminbestätigung</h2>
+      
+     
+
+      <div class="form-group" style="margin-bottom: 20px;">
+  <label style="display: block; margin-bottom: 8px; font-weight: bold; color: white;">
+    Bevorzugter Termin <span class="required-star">*</span>
+  </label>
+  <input type="date" id="deliveryDate" required
+         min="" 
+         style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box; background-color: rgba(255,255,255,0.2); color: white;">
+</div>
+      
+      <div class="form-group" style="margin-bottom: 20px;">
+        <label style="display: block; margin-bottom: 8px; font-weight: bold; color: white;">Bilder hochladen (optional, max. 5)</label>
+        <input type="file" id="photos" multiple accept="image/*" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box; background-color: rgba(255,255,255,0.2); color: white;">
+        <div id="fileList" style="margin-top: 10px;"></div>
+      </div>
+      
+      <div class="form-group" style="margin-bottom: 20px;">
+        <label style="display: block; margin-bottom: 8px; font-weight: bold; color: white;">Bemerkungen</label>
+        <textarea id="notes" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box; background-color: rgba(255,255,255,0.2); color: white; height: 100px; resize: vertical;"></textarea>
+      </div>
+      
+      <div class="form-navigation" style="display: flex; justify-content: space-between; margin-top: 30px;">
+        <button type="button" class="prev-btn" style="padding: 12px 25px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: all 0.3s ease; background: rgba(255,255,255,0.2); color: white;">Zurück</button>
+        <button type="button" id="submitFormBtn" style="padding: 12px 25px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: all 0.3s ease; background: #e74c3c; color: white;">Termin buchen</button>
+      </div>
+    </div>
+  </form>
+</section>
+
+<script>
+  // بيانات الأثاثter
+  const furnitureItems = [
+    { id: 1, name: 'Sofa', image: 'soofa.svg' },
+    { id: 2, name: 'Tisch', image: 'tisch.svg' },
+    { id: 3, name: 'Bett', image: 'bett.svg' },
+    { id: 4, name: 'Schrank', image: 'schrank.svg' },
+    { id: 5, name: 'Stuhl', image: 'stuhl.svg' },
+    { id: 6, name: 'Schreibtisch', image: 'Schreibtisch.svg' },
+    { id: 7, name: 'regal', image: 'regal.svg' },
+    { id: 8, name: 'anderes', image: 'anderes.svg' }
+  ];
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const order = {};
+    let currentPage = 1;
+    const totalPages = 3;
+
+    // تهيئة الطلب
+    furnitureItems.forEach(item => {
+      order[item.id] = { ...item, quantity: 0 };
+    });
+
+    // عرض الأثاث في الصفحة 2
+const furnitureGrid = document.querySelector('.furniture-grid');
+furnitureGrid.style.display = 'grid';
+furnitureGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(160px, 1fr))';
+furnitureGrid.style.gap = '15px';
+furnitureGrid.style.padding = '15px';
+
+furnitureItems.forEach(item => {
+  const itemElement = document.createElement('div');
+  itemElement.className = 'furniture-item';
+  itemElement.style = `
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+  `;
+  
+  itemElement.innerHTML = `
+    <div style="
+      height: 140px;
+      width: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    ">
+      <img 
+        src="images/${item.image}" 
+        alt="${item.name}" 
+        style="
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+          transition: transform 0.3s ease;
+        "
+        onmouseover="this.style.transform='scale(1.05)'"
+        onmouseout="this.style.transform='scale(1)'"
+      >
+    </div>
+    <h3 style="
+      margin: 0 0 10px 0;
+      font-size: 15px;
+      font-weight: 500;
+      width: 100%;
+    ">${item.name}</h3>
+    <div class="quantity-controls" style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    ">
+      <button class="quantity-btn minus" data-id="${item.id}" style="
+        width: 26px;
+        height: 26px;
+        border: none;
+        background: rgba(44, 62, 80, 0.7);
+        color: white;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+      ">-</button>
+      <span class="quantity" data-id="${item.id}" style="
+        margin: 0 10px;
+        font-weight: bold;
+        font-size: 14px;
+        min-width: 18px;
+      ">0</span>
+      <button class="quantity-btn plus" data-id="${item.id}" style="
+        width: 26px;
+        height: 26px;
+        border: none;
+        background: rgba(44, 62, 80, 0.7);
+        color: white;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+      ">+</button>
+    </div>
+  `;
+  
+  furnitureGrid.appendChild(itemElement);
+});
+    // التحكم في الكمية
+    document.querySelectorAll('.quantity-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const id = parseInt(this.getAttribute('data-id'));
+        const isPlus = this.classList.contains('plus');
+        
+        if (isPlus) {
+          order[id].quantity++;
+        } else if (order[id].quantity > 0) {
+          order[id].quantity--;
+        }
+        
+        updateQuantityDisplay(id);
+      });
+    });
+
+    function updateQuantityDisplay(id) {
+      const quantityElement = document.querySelector(`.quantity[data-id="${id}"]`);
+      quantityElement.textContent = order[id].quantity;
+      calculateTotalItems(); // تحديث العدد الإجمالي
+    }
+
+
+    
+
+    // دالة لحساب العدد الإجمالي
+    function calculateTotalItems() {
+      let total = 0;
+      furnitureItems.forEach(item => {
+        total += order[item.id].quantity;
+      });
+      document.getElementById('total-items').textContent = total;
+    }
+
+    // عرض أسماء الملفات المختارة
+    document.getElementById('photos').addEventListener('change', function(e) {
+      const fileList = document.getElementById('fileList');
+      fileList.innerHTML = '';
+      
+      if (this.files.length > 5) {
+        alert('Maximal 5 Bilder erlaubt');
+        this.value = '';
+        return;
+      }
+      
+      if (this.files.length > 0) {
+        const list = document.createElement('ul');
+        list.style = 'list-style-type: none; padding: 0; margin: 0; color: white;';
+        
+        Array.from(this.files).forEach(file => {
+          const item = document.createElement('li');
+          item.textContent = file.name;
+          list.appendChild(item);
+        });
+        
+        fileList.appendChild(list);
+      }
+    });
+
+    // التنقل بين الصفحات
+    document.querySelectorAll('.next-btn1').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (validatePage(currentPage)) {
+          goToPage(2);
+        }
+      });
+    });
+
+    document.querySelectorAll('.prev-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        goToPage(currentPage - 1);
+      });
+    });
+
+    document.querySelector('.next-btn2').addEventListener('click', function(e) {
+      e.preventDefault();
+      if (validateForm()) {
+        goToPage(3);
+      }
+    
+  // تبديل الصفحات
+  document.getElementById('page2').style.display = 'none';
+  document.getElementById('page3').style.display = 'block';
+  
+  // التمرير إلى الصفحة 3 مع مراعاة الهواتف
+  setTimeout(() => {
+    const page3 = document.getElementById('page3');
+    const headerHeight = document.querySelector('header')?.offsetHeight || 0;
+    const scrollPosition = page3.offsetTop - headerHeight - 20;
+    
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: 'smooth'
+    });
+  }, 100);
+});
+
+
+
+
+
+
+
+
+
+    function validatePage(page) {
+      if (page === 1) {
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const address = document.getElementById('address').value;
+           const kundenartSelected = document.querySelector('input[name="customerType"]:checked');
+    
+    if (!name || !phone || !address || !kundenartSelected) {
+      return false;
+        }
+      }
+      return true;
+    }
+
+    function goToPage(page) {
+      if (page < 1 || page > totalPages) return;
+      
+      document.querySelectorAll('.form-page').forEach(page => {
+        page.style.display = 'none';
+      });
+      
+      document.querySelector(`#page${page}`).style.display = 'block';
+      currentPage = page;
+    }
+    
+
+    // إرسال النموذج
+document.getElementById('submitFormBtn').addEventListener('click', function() {
+  // تأكد من تحميل EmailJS أولاً
+  if (typeof emailjs === 'undefined') {
+    alert('Error: EmailJS library not loaded. Please try again later.');
+    console.error('EmailJS is not defined');
+    return;
+  }
+      // جمع بيانات النموذج
+      const formData = {
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        customerType: document.querySelector('input[name="customerType"]:checked').value,
+        email: document.getElementById('email').value,
+        address: document.getElementById('address').value,
+        deliveryDate: document.getElementById('deliveryDate').value,
+        notes: document.getElementById('notes').value,
+        furnitureItems: []
+      };
+
+      // جمع بيانات الأثاث المختار
+      furnitureItems.forEach(item => {
+        if (order[item.id].quantity > 0) {
+          formData.furnitureItems.push({
+            name: item.name,
+            quantity: order[item.id].quantity
+          });
+        }
+      });
+
+      // إرسال البيانات
+      emailjs.send("service_1yu9ogo", "template_ugxzeyb", {
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        customer_type: formData.customerType,
+        address: formData.address,
+        delivery_date: formData.deliveryDate,
+        notes: formData.notes,
+        furniture_items: formData.furnitureItems.map(item => `${item.name} (${item.quantity}x)`).join(", "),
+        message: `New booking request from ${formData.name}`,
+        title: "New Booking Request"
+      })
+      .then(() => {
+        alert("Booking submitted successfully!");
+        document.getElementById('furnitureForm').reset();
+        goToPage(1);
+      })
+       .catch(error => {
+    console.error("Failed to send:", error);
+    alert("Failed to submit booking. Error: " + JSON.stringify(error));
+  });
+    });
+  
+  });
+  
+  
+</script>
+
+
+
+<!--نتهاء الكود -->
+    <section class="contactContainer" id="3">
+      <div class="contactTitle">
+        <h1 class="aboutName">Contact</h1>
+        <h1 class="aboutTitle"></h1>
+      </div>
+      <div class="contact">
+        
+      </div>
+      <div class="Kontaktieren">
+        <a
+          href="https://wa.me/+491635250421
+          "
+          target="_blank"
+          ><img src="assets/svg/wa.svg" alt="my whatsapp account"
+        /></a>
+        
+        <a href="saaadnabt@gmail.com
+        " target="_blank"
+          ><img src="assets/svg/Email.svg" alt="my email account"
+        /></a>
+        
+      </div>
+    </section>
+    <hr />
+    <footer>
+      <p>Built by Easymontage .</p>
+    </footer>
+   
+  </body>
+</html>
